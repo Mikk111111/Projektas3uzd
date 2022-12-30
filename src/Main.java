@@ -7,9 +7,17 @@ public class Main {
 //        {
 //            System.out.print(temp[i]+" ");
 //        }
-        EX12(20);
+        EX13(205);
     }
     //==============================================================
+    public static boolean isNumeric(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch(NumberFormatException e){
+            return false;
+        }
+    }
     public static int EX1(int a, int b)
     {
         return a+b;
@@ -139,13 +147,24 @@ public class Main {
         }
     }
 
-    public static boolean isNumeric(String str) {
-        try {
-            Double.parseDouble(str);
-            return true;
-        } catch(NumberFormatException e){
-            return false;
+    public static int EX13(int x)
+    {
+        int amount = 0;
+        for(int i = 2 ;i<x;i++)
+        {
+            if(x%i==0)
+            {
+                amount++;
+                System.out.print(i+" ");
+            }
         }
+        return amount;
+    }
+
+    public static int[] EX14()
+    {
+        int[] arr = new int[100];
+        return arr;
     }
 
 }
