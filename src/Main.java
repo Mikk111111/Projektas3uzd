@@ -7,7 +7,7 @@ public class Main {
 //        {
 //            System.out.print(temp[i]+" ");
 //        }
-        EX13(205);
+        EX15(10);
     }
     //==============================================================
     public static boolean isNumeric(String str) {
@@ -18,6 +18,7 @@ public class Main {
             return false;
         }
     }
+
     public static int EX1(int a, int b)
     {
         return a+b;
@@ -155,18 +156,59 @@ public class Main {
             if(x%i==0)
             {
                 amount++;
-                System.out.print(i+" ");
             }
         }
         return amount;
     }
 
-    public static int[] EX14()
+    /**
+     *
+     * @param size
+     * @return Array sorted by EX13
+     */
+    public static int[] EX14(int size)
     {
-        int[] arr = new int[100];
+        int[] arr = new int[size];
+        for(int i = 0 ;i<arr.length;i++)
+        {
+            arr[i] = (int) Math.round(Math.random()*44+33);
+        }
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                int temp = 0;
+                if (EX13(arr[j]) < EX13(arr[i])) {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        for(int i = 0 ;i<arr.length;i++)
+        {
+            System.out.println("Number: "+arr[i]+":"+EX13(arr[i]));
+        }
         return arr;
-        //xfzd
-        //kk
+    }
+    public static int EX15(int size) {
+        int[] arr = new int[size];
+        int amount = 0;
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (int) Math.round(Math.random() * 444 + 333);
+        }
+        for(int i = 0 ;i<arr.length;i++)
+        {
+            if(EX13(arr[i])==0)
+            {
+                amount++;
+            }
+
+        }
+        for(int i = 0 ;i<arr.length;i++)
+        {
+            System.out.println("Number: "+arr[i]+":"+EX13(arr[i]));
+        }
+        System.out.println("Prime found: "+amount);
+        return amount;
     }
 
 }
