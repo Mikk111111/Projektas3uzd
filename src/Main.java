@@ -1,13 +1,9 @@
 import java.security.spec.RSAOtherPrimeInfo;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-//        int[] temp = EX5();
-//        for(int i = 0; i < temp.length ; i++)
-//        {
-//            System.out.print(temp[i]+" ");
-//        }
-        EX15(10);
+        EX18();
     }
     //==============================================================
     public static boolean isNumeric(String str) {
@@ -209,6 +205,20 @@ public class Main {
         }
         System.out.println("Prime found: "+amount);
         return amount;
+    }
+
+    public static  ArrayList<Integer> EX18()
+    {
+        ArrayList<Integer> arr = new ArrayList<>();
+        arr.add( (int) Math.ceil(Math.random()*33) );
+        arr.add( (int) Math.ceil(Math.random()*33) );
+        arr.add( (int) Math.ceil(Math.random()*33) );
+        boolean isPrimeLast = true;
+        while(isPrimeLast)
+        {
+
+        }
+        return arr;
     }
 
 }
